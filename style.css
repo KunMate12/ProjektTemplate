@@ -1,0 +1,128 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root
+{
+    --font: #ece8fb;
+    --hfbg: #7a69b7;
+    --main: #271251;
+}
+
+.border
+{
+    border-color: var(--font) !important;
+}
+
+.nav-link, .navbar-brand, .dropdown-item, h1, p
+{
+    color: var(--font);
+}
+
+#emel
+{
+    display: block; 
+    height:71px;
+}
+
+#mobilreklam
+{
+    width:100%;
+    height:75px;
+}
+
+.full
+{
+    height:auto;
+    width: 100%
+}
+
+.hf
+{
+    background-color: var(--hfbg);
+}
+
+#mainsection
+{
+    background-color: var(--main);
+}
+
+#navbarSupportedContent{font-size: large;}
+
+#planet{font-size: x-large; font-weight: 500;}
+
+#LightDark
+{
+    width:45px;
+    height:45px;
+}
+#LightDark:hover
+{
+    cursor:pointer;
+}
+
+body 
+{
+    background-color: black;
+    height: auto;
+}
+#contactgrid
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+}
+#contactflex
+{
+    display: flex;
+    flex-direction: row;
+}
+.jog
+{
+    font-size: 20px
+}
+.kapcs-icon
+{
+    height:50px;
+    width:50px;
+}
+.kapcs-icon:hover {transform: scale(1.1)}
+.pflex
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#contactflex div
+{
+    width: 50%;
+}
+
+@media only screen and (max-width: 991px) {
+    #contactgrid
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    #contactgrid
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    #contactflex
+    {
+        flex-direction: column;
+    }
+
+    #contactflex div
+    {
+        width: 100%;
+    }
+}
