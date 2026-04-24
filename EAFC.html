@@ -6,46 +6,17 @@
         <title>EAFC26 Megjelenés</title>
         <link rel="icon" href="media\Ikon.webp">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        
-        <style>
-            #navbarSupportedContent{font-size: large;}
-            #planet{font-size: x-large; font-weight: 500;}
-            body 
-            {
-                background-color: black
-            }
-            .jog
-            {
-                font-size: 15px
-            }
-            .kapcs-icon:hover {transform: scale(1.1)}
-            .media:hover {
-                transform: scale(1.01);
-                transition-timing-function: ease-out;
-                transition-duration: 0.25s;
-                box-shadow: 0 4px 8px rgba(50,50,50,0.3);
-            }
-            .media
-            {
-                transform: scale(1);
-                transition-timing-function: ease-out;
-                transition-duration: 0.25s;
-                width:60%; 
-                height: auto;
-            }
-            p 
-            {
-                font-size: 20px;                
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
+
+        <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-dark navbar-expand-md bg-dark position-fixed z-1 w-100">
+            <nav class="navbar navbar-expand-md position-fixed z-1 w-100 hf">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#" id="planet">
-                        <img src="media\Ikon.webp" alt="Logo" width="45" height="45" class="d-inline-block align-text-center">
+                        <img src="media/Ikon.webp" alt="Logo" width="45" height="45" class="d-inline-block align-text-center">
                         Planet Gaming
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,13 +31,13 @@
                                 <a class="nav-link" href="Kapcsolat.html">Kapcsolat</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Rolunk5.html">Rólunk</a>
+                                <a class="nav-link" href="Rolunk.html">Rólunk</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">
                                     Cikkek
                                 </a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu hf">
                                     <li><a class="dropdown-item" href="#">Hírek</a></li>
                                     <li><a class="dropdown-item" href="#">Tippek</a></li>
                                     <li><a class="dropdown-item" href="#">Kritikák</a></li>
@@ -74,68 +45,71 @@
                             </li>
                         </ul>
                     </div>
+                    <div>
+                        <img src="media/Light.webp" id="LightDark" onclick="DarkLight();">
+                    </div>
                 </div>
             </nav>
-            <div style="display: block; height:71px;"></div>
-            <div class="container-fluid" style="height: auto;">
-                <img src="eafcboritokep.webp" style = "width: 100%; height: auto;">
+            <div id="emel"></div>
+            <div class="container-fluid" class="full">
+                <img src="media/eafcboritokep.webp" class="full">
             </div>
         </header>
         <main class="mt-2">
             <div class="container-fluid position-relative">
                 <div class="row">
                     <div class="col-md-2 d-none d-md-block">
-                        <img src="media\Reklám.webp" style="height:auto;width:100%;" class="mb-2">
-                        <img src="media\Reklám.webp" style="height:auto;width:100%;" class="mt-2">
+                        <img src="media\Reklám.webp" class="mb-2 full">
+                        <img src="media\Reklám.webp" class="mt-2 full">
                     </div>
-                    <div class="col-md-8" style="background-color: rgba(111, 16, 250, 0.8);">
-                        <h1 class="text-white fs-1 text-center">Megérkezett az új EA Sports FC</h1>
-                        <h2 class="text-white text-center">Dátum: 2026.04.12. - Szerző: Kun Máté</h2>
-                        <div class="border border-white py-2 container-fluid">
-                            <p class="text-white">Az EA Sports FC sorozat legújabb része hivatalosan is megjelent, és világszerte hatalmas érdeklődés övezi. A rajongók már a megjelenés pillanatában ellepték a szervereket, ami jól mutatja, hogy a korábban FIFA néven ismert franchise továbbra is az egyik legnépszerűbb focis játéksorozat a világon. Az Electronic Arts által fejlesztett játék több platformon is elérhető, beleértve a PlayStation, Xbox és PC rendszereket. A fejlesztők célja ezúttal is az volt, hogy a valósághű futballélményt még közelebb hozzák a játékosokhoz, miközben új elemekkel frissítik a megszokott játékmenetet.</p>
-                            <img src="eakep2.webp" class="d-block mx-auto media">
+                    <div class="col-md-8" id="mainsection">
+                        <h1 class="fs-1 text-center">Megérkezett az új EA Sports FC</h1>
+                        <h2 class="text-center">Dátum: 2026.04.12. - Szerző: Kun Máté</h2>
+                        <div class="border py-2 container-fluid">
+                            <p class="cikkp">Az EA Sports FC sorozat legújabb része hivatalosan is megjelent, és világszerte hatalmas érdeklődés övezi. A rajongók már a megjelenés pillanatában ellepték a szervereket, ami jól mutatja, hogy a korábban FIFA néven ismert franchise továbbra is az egyik legnépszerűbb focis játéksorozat a világon. Az Electronic Arts által fejlesztett játék több platformon is elérhető, beleértve a PlayStation, Xbox és PC rendszereket. A fejlesztők célja ezúttal is az volt, hogy a valósághű futballélményt még közelebb hozzák a játékosokhoz, miközben új elemekkel frissítik a megszokott játékmenetet.</p>
+                            <img src="media/eakep2.webp" class="d-block mx-auto media">
                         </div>
-                        <div class="border border-white"><h2 class="text-white text-center">Újítások és játékmenetbeli fejlesztések</h2></div>
-                        <div class="border border-white py-2 container-fluid">
-                            <p class="text-white">Az egyik legfontosabb újdonság a továbbfejlesztett HyperMotion technológia, amely még természetesebb mozgásokat, animációkat és ütközéseket tesz lehetővé. Ennek köszönhetően a mérkőzések látványosabbak és élethűbbek, mint korábban bármikor. Az Ultimate Team mód is jelentős frissítéseket kapott. Új kihívások, események és testreszabási lehetőségek kerültek be, amelyek még hosszabb távon is motiválhatják a játékosokat. Emellett a közösségi és versenyképes elemek is hangsúlyosabb szerepet kaptak. A karrier mód szintén fejlődött: a menedzser mód és a játékoskarrier is részletesebb lett, több döntési lehetőséggel és valósághűbb szimulációval. Az online játékmódok esetében pedig a fejlesztők stabilabb szervereket és gördülékenyebb meccskeresést ígérnek, bár a rajt napján így is előfordultak kisebb fennakadások a nagy terhelés miatt.</p>
-                            <iframe style="width: 100%; height: 600px;" src="https://www.youtube.com/embed/TSi0iJYSQ24" title="EA SPORTS FC 26 | Official Reveal Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="border"><h2 class=" text-center">Újítások és játékmenetbeli fejlesztések</h2></div>
+                        <div class="border py-2 container-fluid">
+                            <p class="cikkp">Az egyik legfontosabb újdonság a továbbfejlesztett HyperMotion technológia, amely még természetesebb mozgásokat, animációkat és ütközéseket tesz lehetővé. Ennek köszönhetően a mérkőzések látványosabbak és élethűbbek, mint korábban bármikor. Az Ultimate Team mód is jelentős frissítéseket kapott. Új kihívások, események és testreszabási lehetőségek kerültek be, amelyek még hosszabb távon is motiválhatják a játékosokat. Emellett a közösségi és versenyképes elemek is hangsúlyosabb szerepet kaptak. A karrier mód szintén fejlődött: a menedzser mód és a játékoskarrier is részletesebb lett, több döntési lehetőséggel és valósághűbb szimulációval. Az online játékmódok esetében pedig a fejlesztők stabilabb szervereket és gördülékenyebb meccskeresést ígérnek, bár a rajt napján így is előfordultak kisebb fennakadások a nagy terhelés miatt.</p>
+                            <iframe style="width: 100%; height: 600px;" class="media" src="https://www.youtube.com/embed/TSi0iJYSQ24" title="EA SPORTS FC 26 | Official Reveal Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
-                        <div class="border border-white"><h2 class="text-white text-center">Fogadtatás és jövőbeli kilátások</h2></div>
-                        <div class="border border-white py-2 container-fluid">
-                            <p class="text-white">Az első visszajelzések alapján a játékosközösség összességében pozitívan fogadta az új részt, különösen a grafikai fejlődést és a játékmenet finomhangolását emelik ki. Ugyanakkor sokan kíváncsian várják, hogy a szerverek stabilitása és a hosszú távú tartalomfrissítések mennyire tudják majd fenntartani az érdeklődést. Az EA Sports FC célja egyértelmű: a FIFA név elvesztése után is megőrizni vezető szerepét a focis játékok piacán, és bizonyítani, hogy a sorozat önállóan is képes meghatározó élményt nyújtani. A következő hetekben derül majd ki igazán, mennyire tudja hosszú távon lekötni a játékosokat, de az indulás mindenképpen erős és ígéretes képet fest a jövőről.</p>
+                        <div class="border"><h2 class=" text-center">Fogadtatás és jövőbeli kilátások</h2></div>
+                        <div class="border py-2 container-fluid">
+                            <p class="cikkp">Az első visszajelzések alapján a játékosközösség összességében pozitívan fogadta az új részt, különösen a grafikai fejlődést és a játékmenet finomhangolását emelik ki. Ugyanakkor sokan kíváncsian várják, hogy a szerverek stabilitása és a hosszú távú tartalomfrissítések mennyire tudják majd fenntartani az érdeklődést. Az EA Sports FC célja egyértelmű: a FIFA név elvesztése után is megőrizni vezető szerepét a focis játékok piacán, és bizonyítani, hogy a sorozat önállóan is képes meghatározó élményt nyújtani. A következő hetekben derül majd ki igazán, mennyire tudja hosszú távon lekötni a játékosokat, de az indulás mindenképpen erős és ígéretes képet fest a jövőről.</p>
                         </div>
-                        <div class="border border-white"><h2 class="text-white text-center">Forrás</h2></div>
-                        <div class="border border-white py-2 container-fluid">
-                            <p class="text-white"><a href="https://www.ea.com/games/ea-sports-fc/fc-26" class="text-white" target="new">EA SPORTS FC™ 26 Home</a> - Electronic Arts</p>
+                        <div class="border"><h2 class=" text-center">Forrás</h2></div>
+                        <div class="border py-2 container-fluid">
+                            <p class="cikkp"><a href="https://www.ea.com/games/ea-sports-fc/fc-26" class="" target="new">EA SPORTS FC™ 26 Home</a> - Electronic Arts</p>
                         </div>
                     </div>
                     <div class="col-md-2 d-none d-md-block">
-                        <img src="media\Reklám.webp" style="height:auto;width:100%;" class="mb-2">
-                        <img src="media\Reklám.webp" style="height:auto;width:100%;" class="mt-2">
+                        <img src="media\Reklám.webp" class="mb-2 full">
+                        <img src="media\Reklám.webp" class="mt-2 full">
                     </div>
                 </div>
             </div>          
         </main>
-        <footer>
-            <div class="container-fluid position-relative bg-dark m-3">
+        <footer class="hf container-fluid">
+            <div class="container-fluid position-relative m-3">
                 <div class="row justify-content-center align-items-center text-center my-2">
-                    <div class="col-auto mx-5 my-2">
-                        <a href=""><img src="media\Insta.webp" style="height:50px;width:50px;" class="kapcs-icon"></a>
+                    <div class="col-auto mx-5 mt-2">
+                        <a href=""><img src="media/Insta.webp"class="kapcs-icon"></a>
                     </div>
 
                     <div class="col-auto mx-5">
-                        <a href=""><img src="media\X.webp" style="height:50px;width:50px;" class="kapcs-icon"></a>
+                        <a href=""><img src="media/X.webp" class="kapcs-icon"></a>
                     </div>
 
                     <div class="col-auto mx-5">
-                        <a href=""><img src="media\Facebook.webp" style="height:50px;width:50px;" class="kapcs-icon"></a>
+                        <a href=""><img src="media/Facebook.webp" class="kapcs-icon"></a>
                     </div>
                 </div>
-                <p class="jog text-center text-white my-2">© 2026 Planet Gaming minden jog fenntartva</p>
+                <p class="jog text-center mt-2">© 2026 Planet Gaming minden jog fenntartva</p>
             </div>
         </footer>
         <div class="d-block d-md-none container-fluid sticky-bottom">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUv7pxNTNCXV6qvtCYOYxpIMEp5hcQPro_AA&s" style="width:100%; height:75px;">
+            <img src="media/MobilReklám.webp" id="mobilreklam">
         </div>
 
     </body>
