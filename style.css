@@ -16,6 +16,27 @@
     border-color: var(--font) !important;
 }
 
+.media:hover 
+{
+    transform: scale(1.01);
+    transition-timing-function: ease-out;
+    transition-duration: 0.25s;
+    box-shadow: 0 4px 8px rgba(50,50,50,0.3);
+}
+.media
+{
+    transform: scale(1);
+    transition-timing-function: ease-out;
+    transition-duration: 0.25s;
+    width:60%; 
+    height: auto;
+}
+
+.cikkp
+{
+    font-size: 20px;
+}
+
 .nav-link, .navbar-brand, .dropdown-item, h1, p, h3, h2, a
 {
     color: var(--font);
