@@ -121,6 +121,11 @@ body
     display: flex;
     flex-direction: column;
 }
+.hirlevel
+{
+    text-align: center;
+    font-size: 20px;
+}
 
 .leiras:hover 
 {
