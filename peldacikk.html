@@ -3,45 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ciki</title>
+        <title>Példa cikk</title>
         <link rel="icon" href="media\Ikon.webp">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        
-        <style>
-            #navbarSupportedContent{font-size: large;}
-            #planet{font-size: x-large; font-weight: 500;}
-            body 
-            {
-                background-color: black
-            }
-            .jog
-            {
-                font-size: 20px
-            }
-            .kapcs-icon:hover {transform: scale(1.1)}
-            .media:hover {
-                transform: scale(1.01);
-                transition-timing-function: ease-out;
-                transition-duration: 0.25s;
-                box-shadow: 0 4px 8px rgba(50,50,50,0.3);
-            }
-            .media
-            {
-                transform: scale(1);
-                transition-timing-function: ease-out;
-                transition-duration: 0.25s;
-                width:75%; 
-                height: auto;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
+
+        <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-dark navbar-expand-md bg-dark position-fixed z-1 w-100">
+            <nav class="navbar navbar-expand-md position-fixed z-1 w-100 hf">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#" id="planet">
-                        <img src="media\Ikon.webp" alt="Logo" width="45" height="45" class="d-inline-block align-text-center">
+                        <img src="media/Ikon.webp" alt="Logo" width="45" height="45" class="d-inline-block align-text-center">
                         Planet Gaming
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,13 +31,13 @@
                                 <a class="nav-link" href="Kapcsolat.html">Kapcsolat</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Rolunk5.html">Rólunk</a>
+                                <a class="nav-link" href="Rolunk.html">Rólunk</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">
                                     Cikkek
                                 </a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu hf">
                                     <li><a class="dropdown-item" href="#">Hírek</a></li>
                                     <li><a class="dropdown-item" href="#">Tippek</a></li>
                                     <li><a class="dropdown-item" href="#">Kritikák</a></li>
@@ -70,74 +45,79 @@
                             </li>
                         </ul>
                     </div>
+                    <div>
+                        <img src="media/Light.webp" id="LightDark" onclick="DarkLight();">
+                    </div>
                 </div>
             </nav>
-            <div style="display: block; height:71px;"></div>
-            <div class="container-fluid" style="height: auto;">
-                <img src="media\pelda_borito.webp" style = "width: 100%;">
+            <div id="emel"></div>
+            <div class="container-fluid" class="full">
+                <img src="media/PlanetGamingRolunk.webp" class="full">
             </div>
         </header>
         <main class="mt-2">
             <div class="container-fluid position-relative">
                 <div class="row">
                     <div class="col-md-2 d-none d-md-block">
-                        <img src="media\Reklám.webp" style="height:auto;width:100%;" class="mb-2">
-                        <img src="media\Reklám.webp" style="height:auto;width:100%;" class="mt-2">
+                        <img src="media\Reklám.webp" class="mb-2 full">
+                        <img src="media\Reklám.webp" class="my-2 full">
+                        <img src="media\Reklám.webp" class="mt-2 full">
                     </div>
-                    <div class="col-md-8" style="background-color: rgba(111, 16, 250, 0.8);">
-                        <h1 class="text-white fs-1 text-center">Cikk neve!!!</h1>
-                        <h2 class="text-white text-center">Dátum: 2027.10.11. - Szerző: Inter Ferenc</h2>
-                        <div class="border border-white py-2 container-fluid">
-                            <p class="text-white">Bevezető I guess, ja és egy kép</p>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxHXaZ6IT4q0Go41HmdwkvcioSBS__ORVS7w&s" class="d-block mx-auto media">
+                    <div class="col-md-8" id="mainsection">
+                        <h1 class=" fs-1 text-center">Cikk neve</h1>
+                        <h2 class=" text-center">Dátum: YYYY.MM.DD - Szerző: Szerző Neve</h2>
+                        <div class="border  py-2 container-fluid">
+                            <p class="cikkp">Bevezető Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit similique dicta, magnam in eum consectetur corporis. Dolor maxime cupiditate facere sapiente quo est, esse aut. Quisquam eligendi et repellat accusantium!</p>
+                            <img src="Ikon.png" class="d-block mx-auto media">
                         </div>
-                        <div class="border border-white"><h2 class="text-white text-center">Szekció!</h2></div>
-                        <div class="border border-white py-2 container-fluid">
-                            <h3 class="text-white">Valami valami</h3>
-                            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque id ea corrupti veritatis quisquam est ad, adipisci similique minus quod eum error, voluptatum facilis et in quae mollitia, sunt accusantium.</p>
-                            <h3 class="text-white">Videó</h3>
-                            <p class="text-white">:D</p>
-                            <video controls style="width:100%;height:auto;" class="media">
-                                <source src="https://ia801903.us.archive.org/32/items/BigBuckBunny_328/BigBuckBunny_512kb.mp4" type="video/mp4">
+                        <div class="border "><h2 class=" text-center">Szekció</h2></div>
+                        <div class="border  py-2 container-fluid">
+                            <h3 >Rész</h3>
+                            <p class="cikkp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque id ea corrupti veritatis quisquam est ad, adipisci similique minus quod eum error, voluptatum facilis et in quae mollitia, sunt accusantium.</p>
+                            <h3 >Videó</h3>
+                            <p class="cikkp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, earum. Libero debitis quos magni, fugiat tempore provident, excepturi officia labore in rem cupiditate, ratione placeat alias nulla unde rerum ad?</p>
+                            <video controls class="full media">
+                                <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
                                 A böngésződ nem támogatja a video lejátszását.</video>
                         </div>
-                        <div class="border border-white"><h2 class="text-white text-center">Szekció 2!</h2></div>
-                        <div class="border border-white py-2 container-fluid">
-                            <h3 class="text-white" id="szekcio2">A "Szekció 2!"-ről</h3>
-                            <p class="text-white">Nyugodjatok meg! A <a href="#szekcio2" class="text-white">szekció 2!</a> ugyanúgy szekció 2 !</p>
+                        <div class="border"><h2 class=" text-center">Szekció</h2></div>
+                        <div class="border py-2 container-fluid">
+                            <p class="cikkp">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi corporis ipsum repudiandae. Vitae velit odio, voluptatem illo similique quo commodi numquam error! Cum, in saepe. Corrupti totam saepe quaerat quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione in a animi error corrupti reiciendis dolorum quibusdam? Maiores ratione eveniet totam recusandae voluptatum architecto sint, placeat necessitatibus. Exercitationem, consequatur velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, aspernatur perspiciatis exercitationem dolorem eligendi placeat, nam in id ad deserunt dolor, molestiae explicabo. Cum, debitis libero. Quia porro tempora omnis.</p>
+                            <p class="cikkp">Hivatkozás: <a href="Rolunk.html">másik oldal (rólunk)</a></p>
                         </div>
-                        <div class="border border-white"><h2 class="text-white text-center">Forrás</h2></div>
-                        <div class="border border-white py-2 container-fluid">
-                            <p class="text-white"><a href="https://www.youtube.com/watch?v=h2Gw01Gl40o" class="text-white" target="new">Itt van asszem</a> - Dame da ne dame yo dame na no yo hírek</p>
+                        <div class="border"><h2 class=" text-center">Forrás</h2></div>
+                        <div class="border py-2 container-fluid">
+                            <p class="cikkp"><a href="https://www.youtube.com/watch?v=fx2Z5ZD_Rbo"  target="new">Youtube videó</a> - Hivatkozás másik oldalról</p>
                         </div>
                     </div>
                     <div class="col-md-2 d-none d-md-block">
-                        <img src="media\Reklám.webp" style="height:auto;width:100%;" class="mb-2">
-                        <img src="media\Reklám.webp" style="height:auto;width:100%;" class="mt-2">
+                        <img src="media\Reklám.webp" class="mb-2 full">
+                        <img src="media\Reklám.webp" class="my-2 full">
+                        <img src="media\Reklám.webp" class="mt-2 full">
                     </div>
                 </div>
             </div>          
         </main>
-        <footer>
-            <div class="container-fluid position-relative bg-dark m-3">
+        <footer class="hf container-fluid">
+            <div class="container-fluid position-relative m-3">
                 <div class="row justify-content-center align-items-center text-center my-2">
-                    <div class="col-auto mx-5 my-2">
-                        <a href=""><img src="media\Insta.webp" style="height:50px;width:50px;" class="kapcs-icon"></a>
+                    <div class="col-auto mx-5 mt-2">
+                        <a href=""><img src="media/Insta.webp"class="kapcs-icon"></a>
                     </div>
 
                     <div class="col-auto mx-5">
-                        <a href=""><img src="media\X.webp" style="height:50px;width:50px;" class="kapcs-icon"></a>
+                        <a href=""><img src="media/X.webp" class="kapcs-icon"></a>
                     </div>
 
                     <div class="col-auto mx-5">
-                        <a href=""><img src="media\Facebook.webp" style="height:50px;width:50px;" class="kapcs-icon"></a>
+                        <a href=""><img src="media/Facebook.webp" class="kapcs-icon"></a>
                     </div>
                 </div>
-                <p class="jog text-center text-white my-2">© 2026 Planet Gaming minden jog fenntartva</p>
+                <p class="jog text-center mt-2">© 2026 Planet Gaming minden jog fenntartva</p>
             </div>
         </footer>
         <div class="d-block d-md-none container-fluid sticky-bottom">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUv7pxNTNCXV6qvtCYOYxpIMEp5hcQPro_AA&s" style="width:100%; height:75px;">
+            <img src="media/MobilReklám.webp" id="mobilreklam">
         </div>
 
     </body>
