@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cikkek</title>
+        <link rel="icon" href="media/Ikon.webp">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md position-fixed z-1 w-100 hf">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#" id="planet">
+                        <img src="media/Ikon.webp" alt="Logo" width="45" height="45" class="d-inline-block align-text-center">
+                        Planet Gaming
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="Main.html">Main</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Kapcsolat.html">Kapcsolat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Rolunk.html">Rólunk</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Cikkek.html">Cikkek</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="media/Light.webp" id="LightDark" onclick="DarkLight();">
+                    </div>
+                </div>
+            </nav>
+            <div id="emel"></div>
+        </header>
+        <main class="mt-2">
+            <div class="container-fluid position-relative">
+                <div class="row">
+                    <div class="col-md-2 d-none d-md-block">
+                        <img src="media\Reklám.webp" class="mb-2 full">
+                        <img src="media\Reklám.webp" class="mt-2 full">
+                    </div>
+                    <div class="col-md-8 pflex" id="mainsection" style="align-items: center;">
+                        <div class="cikk border cikkgrid my-4" id="pelda" onclick="window.location.assign('peldacikk.html')">
+                            <div class="p-3"><img src="media/Ikon.webp" class="full"></div>
+                            <div class="pflex p-3"><h4>Példa cikk</h4><hr><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente deleniti blanditiis maiores a accusantium quae vero illum ducimus, qui adipisci perspiciatis, delectus, veniam dolore voluptatem. Aliquid velit porro eveniet esse?</p></div>
+                        </div>
+
+                        <div class="cikk border cikkgrid my-4" id="eafc" onclick="window.location.assign('EAFC.html')">
+                            <div class="p-3"><img src="media/eakep2.webp" class="full"></div>
+                            <div class="pflex p-3"><h4>Megérkezett az új EA Sports FC</h4><hr><p>Az EA Sports FC sorozat legújabb része hivatalosan is megjelent, és világszerte hatalmas érdeklődés övezi. A rajongók már a megjelenés pillanatában ellepték a szervereket, ami jól mutatja, hogy a korábban FIFA néven ismert franchise továbbra is az egyik legnépszerűbb focis játéksorozat a világon...</p></div>
+                        </div>
+
+                        <div class="cikk border cikkgrid my-4" id="skong" onclick="window.location.assign('silksong.html')">
+                            <div class="p-3"><img src="media/silksong5.webp" class="full"></div>
+                            <div class="pflex p-3"><h4>Hollow Knight: Silksong – Megérte a várakozást?</h4><hr><p>A Hollow Knight: Silksong az egyik legtöbbet várt indie játék volt az elmúlt években...</p></div>
+                        </div>
+
+                        <div class="cikk border cikkgrid my-4" id="gtav" onclick="window.location.assign('GTAV.html')">
+                            <div class="p-3"><img src="media/GTAV3.webp" class="full"></div>
+                            <div class="pflex p-3"><h4>Grand Theft Auto V</h4><hr><p>A Grand Theft Auto V egy hatalmas nyílt világú játék, amely Los Santosban játszódik, egy kiterjedt, napsütötte metropoliszban, amely azzal küzd, hogy talpon maradjon a gazdasági bizonytalanság és az olcsó valóságshow-k korszakában...</p></div>
+                        </div>
+
+                        <div class="cikk border cikkgrid my-4" id="p3" onclick="window.location.assign('P3tips.html')">
+                            <div class="p-3"><img src="media/P3tip2.webp" class="full"></div>
+                            <div class="pflex p-3"><h4>Persona 3 Tartarus tippek</h4><hr><p>A Persona 3 minden idők egyik legismertebb JRPG játékok közé tartozik, amely mindenkinek ajánlott, hogy próbálja ki. Ugyan amennyire közkedvelt, nem könnyű megszokni a harcokhoz megfelelő gondolatmeneteket...</p></div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2 d-none d-md-block">
+                        <img src="media\Reklám.webp" class="mb-2 full">
+                        <img src="media\Reklám.webp" class="mt-2 full">
+                    </div>
+                </div>
+            </div>          
+        </main>
+        <footer class="hf container-fluid">
+            <div class="container-fluid position-relative m-3">
+                <div class="row justify-content-center align-items-center text-center my-2">
+                    <div class="col-auto mx-5 mt-2">
+                        <a href=""><img src="media/Insta.webp"class="kapcs-icon"></a>
+                    </div>
+
+                    <div class="col-auto mx-5">
+                        <a href=""><img src="media/X.webp" class="kapcs-icon"></a>
+                    </div>
+
+                    <div class="col-auto mx-5">
+                        <a href=""><img src="media/Facebook.webp" class="kapcs-icon"></a>
+                    </div>
+                </div>
+                <p class="jog text-center mt-2">© 2026 Planet Gaming minden jog fenntartva</p>
+            </div>
+        </footer>
+        <div class="d-block d-md-none container-fluid sticky-bottom">
+            <img src="media/MobilReklám.webp" id="mobilreklam">
+        </div>
+    </body>
+</html>
