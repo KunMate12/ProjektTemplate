@@ -45,7 +45,7 @@
     font-size: 20px;
 }
 
-.nav-link, .navbar-brand, .dropdown-item, h1, p, h3, h2, a, h4, hr
+.nav-link, .navbar-brand, .dropdown-item, h1, p, h3, h2, a, h4, hr, label
 {
     color: var(--font);
 }
