@@ -140,6 +140,16 @@ body
     text-align: center;
     font-size: 20px;
 }
+.gomb
+{
+    background-color: var(--hfbg);
+    border: var(--hfbg);
+}
+.gomb:hover
+{
+    background-color: #492d80;
+    border: #492d80;
+}
 
 .cikkgrid
 {
