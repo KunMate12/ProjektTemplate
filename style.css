@@ -103,7 +103,6 @@ hr
 {
     cursor:pointer;
 }
-
 body 
 {
     background-color: black;
@@ -114,6 +113,8 @@ body
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
+    padding: 3px;
+    margin-bottom: 15px;
 }
 #contactflex
 {
