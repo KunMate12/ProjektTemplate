@@ -1,30 +1,4 @@
-function DarkLight()
-{
-    const r = document.querySelector(":root");
-    const img = document.getElementById("LightDark");
-    const body = document.querySelector("body");
-
-    if (img.getAttribute("src") == "media/Light.webp") // sötét módból világosba
-    {
-        img.setAttribute("src", "media/Dark.webp");
-        r.style.setProperty("--font", "#271251");
-        r.style.setProperty("--hfbg", "#a897d1");
-        r.style.setProperty("--main", "#ece8fb");
-        body.style.setProperty("background-color", "#ffffff");
-    }
-    else // világos módból sötétbe
-    {
-        img.setAttribute("src", "media/Light.webp");
-        r.style.setProperty("--font", "#ece8fb");
-        r.style.setProperty("--hfbg", "#7a69b7");
-        r.style.setProperty("--main", "#271251");
-        body.style.setProperty("background-color", "#000000");
-    }
-}
-
-function Filter()
-{
-    let cikkek = [
+let cikkek = [
         {
             id: "pelda",
             link: "peldacikk.html",
@@ -75,8 +49,34 @@ function Filter()
             type: "tip",
             date: "2026-04-25"
         }
-    ];
+];
 
+function DarkLight()
+{
+    const r = document.querySelector(":root");
+    const img = document.getElementById("LightDark");
+    const body = document.querySelector("body");
+
+    if (img.getAttribute("src") == "media/Light.webp") // sötét módból világosba
+    {
+        img.setAttribute("src", "media/Dark.webp");
+        r.style.setProperty("--font", "#271251");
+        r.style.setProperty("--hfbg", "#a897d1");
+        r.style.setProperty("--main", "#ece8fb");
+        body.style.setProperty("background-color", "#ffffff");
+    }
+    else // világos módból sötétbe
+    {
+        img.setAttribute("src", "media/Light.webp");
+        r.style.setProperty("--font", "#ece8fb");
+        r.style.setProperty("--hfbg", "#7a69b7");
+        r.style.setProperty("--main", "#271251");
+        body.style.setProperty("background-color", "#000000");
+    }
+}
+
+function Filter()
+{
     let szerzo = [];
     let tipus = [];
     for (let nev of ["KM", "MÁ", "OÁ", "SM"])
@@ -100,7 +100,7 @@ function Filter()
             /*
             <div class="cikk border cikkgrid my-4" id="cikk.id" onclick="window.location.assign(cikk.link)">
                 <div class="p-3"><img src="cikk.img" class="full"></div>
-                <div class="pflex p-3"><h4>cikk.cim</h4><hr><p>cikk.txt</p></div>
+                <div class="pflex p-3"><h4 class="d-none d-lg-block">cikk.cim</h4><hr><p class="d-none d-lg-block">cikk.txt</p></div>
             </div> 
             */
             const egesz = document.createElement("div");
@@ -121,8 +121,11 @@ function Filter()
             cikkcim.textContent = cikk.cim;
             const cikktxt = document.createElement("p");
             cikktxt.textContent = cikk.txt;
+            cikktxt.setAttribute("class", "d-none d-lg-block")
+            const hr = document.createElement("hr");
+            hr.setAttribute("class", "d-none d-lg-block");
             txtdiv.appendChild(cikkcim);
-            txtdiv.appendChild(document.createElement("hr"));
+            txtdiv.appendChild(hr);
             txtdiv.appendChild(cikktxt);
 
             egesz.appendChild(imgdiv);
@@ -131,5 +134,82 @@ function Filter()
             lista.appendChild(egesz);
 
         }
+    }
+}
+
+function Newest()
+{
+    let datum = cikkek;
+    const lista = document.getElementById("lista");
+    lista.textContent = "";
+    console.log("hali");
+    for (let i = 0; i < datum.length; i++)
+    {
+        for (let j = i + 1; j < datum.length; j++)
+        {
+            if (parseInt(datum[i].date.slice(0, 4)) < parseInt(datum[j].date.slice(0, 4)))
+            {
+                let temp = datum[j];
+                datum[j] = datum[i];
+                datum[i] = temp;
+            }
+            if (parseInt(datum[i].date.slice(0, 4)) == parseInt(datum[j].date.slice(0, 4)))
+            {
+                if (parseInt(datum[i].date.slice(5, 7)) < parseInt(datum[j].date.slice(5, 7)))
+                {
+                    let temp = datum[j];
+                    datum[j] = datum[i];
+                    datum[i] = temp;
+                }
+                if (parseInt(datum[i].date.slice(5, 7)) == parseInt(datum[j].date.slice(5, 7)))
+                {
+                    if (parseInt(datum[i].date.slice(8, 10)) < parseInt(datum[j].date.slice(8, 10)))
+                    {
+                        let temp = datum[j];
+                        datum[j] = datum[i];
+                        datum[i] = temp;
+                    }
+                }
+            }
+        }
+    }
+
+    for (let i = 0; i < 3; i++)
+    {
+        /*
+        <div class="cikk border cikkgrid my-4" id="cikk.id" onclick="window.location.assign(cikk.link)">
+            <div class="p-3"><img src="cikk.img" class="full"></div>
+            <div class="pflex p-3"><h4 class="d-none d-lg-block">cikk.cim</h4><hr><p class="d-none d-lg-block">cikk.txt</p></div>
+        </div> 
+        */
+        const egesz = document.createElement("div");
+        egesz.setAttribute("class", "cikk border cikkgrid my-4");
+        egesz.setAttribute("id", datum[i].id);
+        egesz.setAttribute("onclick", "window.location.assign('" + datum[i].link + "')");
+
+        const imgdiv = document.createElement("div");
+        imgdiv.setAttribute("class", "p-3");
+        const image = document.createElement("img");
+        image.setAttribute("src", datum[i].img);
+        image.setAttribute("class", "full");
+        imgdiv.appendChild(image);
+
+        const txtdiv = document.createElement("div");
+        txtdiv.setAttribute("class", "pflex p-3");
+        const cikkcim = document.createElement("h4");
+        cikkcim.textContent = datum[i].cim;
+        const cikktxt = document.createElement("p");
+        cikktxt.textContent = datum[i].txt;
+        cikktxt.setAttribute("class", "d-none d-lg-block")
+        const hr = document.createElement("hr");
+        hr.setAttribute("class", "d-none d-lg-block");
+        txtdiv.appendChild(cikkcim);
+        txtdiv.appendChild(hr);
+        txtdiv.appendChild(cikktxt);
+
+        egesz.appendChild(imgdiv);
+        egesz.appendChild(txtdiv);
+
+        lista.appendChild(egesz);
     }
 }
