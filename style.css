@@ -43,6 +43,7 @@
 .cikkp
 {
     font-size: 20px;
+    text-align: justify;
 }
 
 .nav-link, .navbar-brand, .dropdown-item, h1, p, h3, h2, a, h4, hr, label
@@ -103,6 +104,7 @@ hr
 {
     cursor:pointer;
 }
+
 body 
 {
     background-color: black;
@@ -177,6 +179,7 @@ body
         grid-template-rows: repeat(2, 1fr);
     }
 
+    
 }
 
 @media only screen and (max-width: 767px) {
@@ -194,5 +197,11 @@ body
     #contactflex div
     {
         width: 100%;
+    }
+  
+    .cikkgrid
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
     }
 }
