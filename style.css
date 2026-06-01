@@ -86,9 +86,24 @@ hr
     height: 100px;
 }
 
+#oldalleiras
+{
+    padding: 5px;
+}
+
+#bemutatkozas
+{
+    padding: 4px;
+}
+
 #mainsection
 {
     background-color: var(--main);
+}
+
+#kapcslink
+{
+    margin-bottom: 10px;
 }
 
 #navbarSupportedContent{font-size: large;}
