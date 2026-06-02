@@ -90,6 +90,87 @@ function Filter()
         if (doboz.checked) tipus.push(doboz.name);
     }
 
+    const ord = document.getElementById("sort");
+    if (ord.value == "date" || ord.value == "dater") 
+    {
+        for (let i = 0; i < cikkek.length; i++) 
+        {
+            for (let j = i + 1; j < cikkek.length; j++) 
+            {
+                if (parseInt(cikkek[i].date.slice(0, 4)) < parseInt(cikkek[j].date.slice(0, 4))) 
+                {
+                    let temp = cikkek[j];
+                    cikkek[j] = cikkek[i];
+                    cikkek[i] = temp;
+                }
+                if (parseInt(cikkek[i].date.slice(0, 4)) == parseInt(cikkek[j].date.slice(0, 4))) 
+                {
+                    if (parseInt(cikkek[i].date.slice(5, 7)) < parseInt(cikkek[j].date.slice(5, 7))) 
+                    {
+                        let temp = cikkek[j];
+                        cikkek[j] = cikkek[i];
+                        cikkek[i] = temp;
+                    }
+                    if (parseInt(cikkek[i].date.slice(5, 7)) == parseInt(cikkek[j].date.slice(5, 7))) 
+                    {
+                        if (parseInt(cikkek[i].date.slice(8, 10)) < parseInt(cikkek[j].date.slice(8, 10))) 
+                        {
+                            let temp = cikkek[j];
+                            cikkek[j] = cikkek[i];
+                            cikkek[i] = temp;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (ord.value == "dater")
+        {
+            for (let i = 0; i < ((cikkek.length % 2 == 0) ? (cikkek.length / 2) : (cikkek.length - 1) / 2); i++)
+            {
+                let temp = cikkek[cikkek.length - i - 1];
+                cikkek[cikkek.length - i - 1] = cikkek[i];
+                cikkek[i] = temp;
+            }
+        }
+    }
+    // ez valamiért nem működik és a javascript-et hibáztatom
+    /*if (ord.value == "abc" || ord.value == "abcr")
+    {
+        let abc = "aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz ";
+
+        for (var i = 0; i < cikkek.length; i++)
+        {
+            for (var j = i + 1; j < cikkek.length; j++)
+            {
+                for (let k = 0; k < ((cikkek[i].cim.length > cikkek[j].cim.length) ? cikkek[j].cim.length : cikkek[i].cim.length); i++)
+                {
+                    if (abc.indexOf(cikkek[i].cim.toLowerCase()[k]) > abc.indexOf(cikkek[j].cim.toLowerCase()[k]))
+                    {
+                        let temp = cikkek[j];
+                        cikkek[j] = cikkek[i];
+                        cikkek[i] = temp;
+                        break;
+                    }
+                    if (abc.indexOf(cikkek[i].cim.toLowerCase()[k]) < abc.indexOf(cikkek[j].cim.toLowerCase()[k]))
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (ord.value == "abcr")
+        {
+            for (let i = 0; i < ((cikkek.length % 2 == 0) ? (cikkek.length / 2) : (cikkek.length - 1) / 2); i++)
+            {
+                let temp = cikkek[cikkek.length - i - 1];
+                cikkek[cikkek.length - i - 1] = cikkek[i];
+                cikkek[i] = temp;
+            }
+        }
+    }*/
+
     const lista = document.getElementById("lista");
     lista.textContent = "";
 
@@ -139,35 +220,33 @@ function Filter()
 
 function Newest()
 {
-    let datum = cikkek;
     const lista = document.getElementById("lista");
     lista.textContent = "";
-    console.log("hali");
-    for (let i = 0; i < datum.length; i++)
+    for (let i = 0; i < cikkek.length; i++)
     {
-        for (let j = i + 1; j < datum.length; j++)
+        for (let j = i + 1; j < cikkek.length; j++)
         {
-            if (parseInt(datum[i].date.slice(0, 4)) < parseInt(datum[j].date.slice(0, 4)))
+            if (parseInt(cikkek[i].date.slice(0, 4)) < parseInt(cikkek[j].date.slice(0, 4)))
             {
-                let temp = datum[j];
-                datum[j] = datum[i];
-                datum[i] = temp;
+                let temp = cikkek[j];
+                cikkek[j] = cikkek[i];
+                cikkek[i] = temp;
             }
-            if (parseInt(datum[i].date.slice(0, 4)) == parseInt(datum[j].date.slice(0, 4)))
+            if (parseInt(cikkek[i].date.slice(0, 4)) == parseInt(cikkek[j].date.slice(0, 4)))
             {
-                if (parseInt(datum[i].date.slice(5, 7)) < parseInt(datum[j].date.slice(5, 7)))
+                if (parseInt(cikkek[i].date.slice(5, 7)) < parseInt(cikkek[j].date.slice(5, 7)))
                 {
-                    let temp = datum[j];
-                    datum[j] = datum[i];
-                    datum[i] = temp;
+                    let temp = cikkek[j];
+                    cikkek[j] = cikkek[i];
+                    cikkek[i] = temp;
                 }
-                if (parseInt(datum[i].date.slice(5, 7)) == parseInt(datum[j].date.slice(5, 7)))
+                if (parseInt(cikkek[i].date.slice(5, 7)) == parseInt(cikkek[j].date.slice(5, 7)))
                 {
-                    if (parseInt(datum[i].date.slice(8, 10)) < parseInt(datum[j].date.slice(8, 10)))
+                    if (parseInt(cikkek[i].date.slice(8, 10)) < parseInt(cikkek[j].date.slice(8, 10)))
                     {
-                        let temp = datum[j];
-                        datum[j] = datum[i];
-                        datum[i] = temp;
+                        let temp = cikkek[j];
+                        cikkek[j] = cikkek[i];
+                        cikkek[i] = temp;
                     }
                 }
             }
@@ -184,22 +263,22 @@ function Newest()
         */
         const egesz = document.createElement("div");
         egesz.setAttribute("class", "cikk border cikkgrid my-4");
-        egesz.setAttribute("id", datum[i].id);
-        egesz.setAttribute("onclick", "window.location.assign('" + datum[i].link + "')");
+        egesz.setAttribute("id", cikkek[i].id);
+        egesz.setAttribute("onclick", "window.location.assign('" + cikkek[i].link + "')");
 
         const imgdiv = document.createElement("div");
         imgdiv.setAttribute("class", "p-3");
         const image = document.createElement("img");
-        image.setAttribute("src", datum[i].img);
+        image.setAttribute("src", cikkek[i].img);
         image.setAttribute("class", "full");
         imgdiv.appendChild(image);
 
         const txtdiv = document.createElement("div");
         txtdiv.setAttribute("class", "pflex p-3");
         const cikkcim = document.createElement("h4");
-        cikkcim.textContent = datum[i].cim;
+        cikkcim.textContent = cikkek[i].cim;
         const cikktxt = document.createElement("p");
-        cikktxt.textContent = datum[i].txt;
+        cikktxt.textContent = cikkek[i].txt;
         cikktxt.setAttribute("class", "d-none d-lg-block")
         const hr = document.createElement("hr");
         hr.setAttribute("class", "d-none d-lg-block");
@@ -211,5 +290,33 @@ function Newest()
         egesz.appendChild(txtdiv);
 
         lista.appendChild(egesz);
+    }
+}
+
+function szerzokibe()
+{
+    let tomb = [document.getElementById("KM"), document.getElementById("MÁ"), document.getElementById("OÁ"), document.getElementById("SM")];
+    let bools = [tomb[0].checked, tomb[1].checked, tomb[2].checked, tomb[3].checked]
+    if (!bools.includes(false))
+    {
+        tomb.forEach(x => x.checked = false);
+    }
+    else
+    {
+        tomb.forEach(x => x.checked = true);
+    }
+}
+
+function tipuskibe()
+{
+    let tomb = [document.getElementById("hir"), document.getElementById("krit"), document.getElementById("tip")];
+    let bools = [tomb[0].checked, tomb[1].checked, tomb[2].checked]
+    if (!bools.includes(false))
+    {
+        tomb.forEach(x => x.checked = false);
+    }
+    else
+    {
+        tomb.forEach(x => x.checked = true);
     }
 }
